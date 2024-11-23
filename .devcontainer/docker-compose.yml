@@ -1,12 +1,13 @@
-name: "template-python-compose-stack"
+name: "devcontainer-with-dockercompose-compose-stack"
 
 services:
 
   app:
-    build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
-      target: develop
+    image: "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye"
+    # build:
+    #   context: ..
+    #   dockerfile: .devcontainer/Dockerfile
+    #   target: develop
     command: tail -f /dev/null
     networks:
       - custom_network
